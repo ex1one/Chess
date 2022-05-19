@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import CellComponent from '../Cell/CellComponent';
 import Board from '../../models/Board';
 import Cell from '../../models/Cell';
@@ -10,6 +10,20 @@ interface IBoardComponentProps {
 
 const BoardComponent: FC <IBoardComponentProps> = ({ board, setBoard }) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
+
+  const updateBoard = () => {
+    const newBoard = board.getCopyBoard();
+    setBoard(newBoard);
+  };
+
+  const highlightCells = () => {
+    board.highlightCell(selectedCell);
+    updateBoard();
+  };
+
+  useEffect(() => {
+    highlightCells();
+  }, [selectedCell]);
 
   return (
     <div className="board">

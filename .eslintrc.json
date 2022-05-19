@@ -43,6 +43,7 @@
         "no-debugger": ["warn"],
         "no-unused-vars": ["warn"],
         "linebreak-style": 0,
-        "@typescript-eslint/no-var-requires": 0
+        "@typescript-eslint/no-var-requires": 0,
+        "no-new": 0
     }
 }

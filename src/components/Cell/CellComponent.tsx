@@ -5,10 +5,13 @@ interface ICellComponentProps {
   cell: Cell
 }
 
-const CellComponent: FC <ICellComponentProps> = ({ cell }) => (
-  <div className={['cell', cell.color].join(' ')}>
-    {cell.figure?.logo && <img src={cell.figure.logo} alt="" />}
-  </div>
-);
+const CellComponent: FC <ICellComponentProps> = ({ cell }) => {
+  console.log(cell);
+  return (
+    <div className={['cell', cell.color].join(' ')}>
+      {cell.figure?.logo && <img src={cell.figure.logo} alt="" />}
+    </div>
+  );
+};
 
 export default CellComponent;

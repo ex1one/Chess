@@ -8,13 +8,19 @@ interface ICellComponentProps {
 }
 
 const CellComponent: FC <ICellComponentProps> = ({ cell, selected, setSelectedCell }) => {
-  console.log(cell);
+  const changeClick = (selectedCell: Cell) => {
+    if (cell.figure) {
+      setSelectedCell(selectedCell);
+    }
+  };
+
   return (
     <button
       type="submit"
-      onClick={() => setSelectedCell(cell)}
-      className={['cell', cell.color, selected ? 'selected' : ''].join(' ')}
+      onClick={() => changeClick(cell)}
+      className={['cell', cell.color, selected ? 'selected' : '', cell.available && cell.figure && 'attack'].join(' ')}
     >
+      {cell.available && !cell.figure && <div className="available" />}
       {cell.figure?.logo && <img src={cell.figure.logo} alt="" />}
     </button>
   );

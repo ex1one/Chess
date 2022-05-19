@@ -6,7 +6,8 @@
     "moduleResolution": "node",
     "baseUrl": "./src/",
     "paths": {
-      "@components": ["component/*"]
+      "@components": ["component/*"],
+      "@figures": ["assets/*"]
     },
     "noEmit": true,
     "outDir": "./dist/",

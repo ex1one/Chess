@@ -13,7 +13,13 @@ class Queen extends Figure {
 
   canMove(target: Cell): boolean {
     if (!super.canMove(target)) return false;
-    return true;
+    if (this.cell.isEmptyVertical(target)) {
+      return true;
+    }
+    if (this.cell.isEmptyHorizontal(target)) {
+      return true;
+    }
+    return this.cell.isEmptyDiagonal(target);
   }
 }
 

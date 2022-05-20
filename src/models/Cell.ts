@@ -1,7 +1,6 @@
 import Colors from './Colors';
 import Figure from './figures/Figure';
 import Board from './Board';
-import figure from './figures/Figure';
 
 export default class Cell {
   readonly x: number;
@@ -88,9 +87,16 @@ export default class Cell {
     this.figure.cell = this;
   }
 
+  addLostFigure(figure: Figure) {
+    figure.color === Colors.BLACK;
+  }
+
   moveFigure(target: Cell) {
     if (this.figure && this.figure.canMove(target)) {
       this.figure?.moveFigure(target);
+      if (target.figure) {
+        this.addLostFigure(target.figure);
+      }
       target.setFigure(this.figure);
       this.figure = null;
     }

@@ -33,7 +33,8 @@ class Figure {
   }
 
   canMove(target: Cell): boolean {
-    return true;
+    if (target.figure?.color === this.color) return false;
+    return target.figure?.name !== FigureNames.KING;
   }
 
   moveFigure(target: Cell) {

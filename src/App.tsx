@@ -5,6 +5,7 @@ import './styles/index.scss';
 import { Player } from './models/Player';
 import Colors from './models/Colors';
 import LostFigures from './components/LostFigures/LostFigures';
+import Timer from './components/Timer/Timer';
 
 const App = () => {
   const [board, setBoard] = useState(new Board());
@@ -30,6 +31,10 @@ const App = () => {
 
   return (
     <div className="app">
+      <Timer
+        restart={restart}
+        currentPlayer={currentPlayer}
+      />
       <BoardComponent
         currentPlayer={currentPlayer}
         changePlayer={changePlayer}

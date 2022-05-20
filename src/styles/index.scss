@@ -9,49 +9,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.board {
-  width: calc(64px * 8);
-  height: calc(64px * 8);
-  display: flex;
-  flex-wrap: wrap;
-}
+  .board {
+    width: calc(64px * 8);
+    height: calc(64px * 8);
+    display: flex;
+    flex-wrap: wrap;
 
-.cell{
-  width: 64px;
-  height: 64px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    .cell{
+      width: 64px;
+      height: 64px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  & img {
-    width: 48px;
-    height: 48px;
-    position: relative;
+      & img {
+        width: 48px;
+        height: 48px;
+        position: relative;
+      }
+
+      &.attack{
+        background: green;
+      }
+    }
+
+    .black{
+      background-color: deepskyblue;
+    }
+
+    .white{
+      background-color: #eed4ac;
+    }
+
+    .selected {
+      background-color: brown;
+    }
+
+    .available {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      background-color: #22c022;
+    }
   }
 
-  &.attack{
-    background: green;
+  .lost{
+    height: calc(50vh - 60px);
+    padding: 30px;
+    margin-left: 50px;
+    background-color: lightgray;
   }
-}
 
-.black{
-  background-color: deepskyblue;
-}
-
-.white{
-  background-color: #eed4ac;
-}
-
-.selected {
-  background-color: brown;
-}
-
-.available {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  background-color: #22c022;
 }

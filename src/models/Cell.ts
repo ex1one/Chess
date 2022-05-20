@@ -32,6 +32,13 @@ export default class Cell {
     return this.figure === null;
   }
 
+  isEnemy(target: Cell): boolean {
+    if (target.figure) {
+      return this.figure?.color !== target.figure.color;
+    }
+    return false;
+  }
+
   isEmptyVertical(target: Cell): boolean {
     if (this.x !== target.x) return false;
 
@@ -76,8 +83,8 @@ export default class Cell {
     return true;
   }
 
-  setFigure(figure: Figure) {
-    this.figure = figure;
+  setFigure(activeFigure: Figure) {
+    this.figure = activeFigure;
     this.figure.cell = this;
   }
 

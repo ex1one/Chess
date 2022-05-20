@@ -10,7 +10,7 @@ class Pawn extends Figure {
   constructor(color: Colors, cell: Cell) {
     super(color, cell);
     this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
-    this.name = FigureNames.BISHOP;
+    this.name = FigureNames.PAWN;
   }
 
   canMove(target: Cell): boolean {
@@ -30,6 +30,7 @@ class Pawn extends Figure {
         && this.cell.isEnemy(target)) {
       return true;
     }
+    return false;
   }
 
   moveFigure(target: Cell) {

@@ -4,7 +4,6 @@ import Board from './models/Board';
 import './styles/index.scss';
 import { Player } from './models/Player';
 import Colors from './models/Colors';
-import { divide } from 'lodash';
 import LostFigures from './components/LostFigures/LostFigures';
 
 const App = () => {

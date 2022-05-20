@@ -5,12 +5,18 @@ interface ICellComponentProps {
   cell: Cell;
   selected: boolean;
   setSelectedCell: React.Dispatch<SetStateAction<Cell | null>>
+  selectedCell: Cell | null
 }
 
-const CellComponent: FC <ICellComponentProps> = ({ cell, selected, setSelectedCell }) => {
-  const changeClick = (selectedCell: Cell) => {
-    if (cell.figure) {
-      setSelectedCell(selectedCell);
+const CellComponent: FC <ICellComponentProps> = ({
+  cell, selected, setSelectedCell, selectedCell,
+}) => {
+  const changeClick = (activeCell: Cell) => {
+    if (selectedCell && selectedCell !== activeCell && selectedCell.figure?.canMove(activeCell)) {
+      selectedCell.moveFigure(activeCell);
+      setSelectedCell(null);
+    } else {
+      setSelectedCell(activeCell);
     }
   };
 

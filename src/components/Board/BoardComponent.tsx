@@ -31,6 +31,7 @@ const BoardComponent: FC <IBoardComponentProps> = ({ board, setBoard }) => {
         row.map((cell) => (
           <CellComponent
             setSelectedCell={setSelectedCell}
+            selectedCell={selectedCell}
             cell={cell}
             key={cell.id}
             selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}

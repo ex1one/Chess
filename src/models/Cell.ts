@@ -76,8 +76,8 @@ export default class Cell {
     return true;
   }
 
-  setFigure(figure: Figure) {
-    this.figure = figure;
+  setFigure(activeFigure: Figure) {
+    this.figure = activeFigure;
     this.figure.cell = this;
   }
 

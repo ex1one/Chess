@@ -15,7 +15,7 @@ const CellComponent: FC <ICellComponentProps> = ({
     if (selectedCell && selectedCell !== activeCell && selectedCell.figure?.canMove(activeCell)) {
       selectedCell.moveFigure(activeCell);
       setSelectedCell(null);
-    } else {
+    } else if (activeCell.figure) {
       setSelectedCell(activeCell);
     }
   };
@@ -24,7 +24,7 @@ const CellComponent: FC <ICellComponentProps> = ({
     <button
       type="submit"
       onClick={() => changeClick(cell)}
-      className={['cell', cell.color, selected ? 'selected' : '', cell.available && cell.figure && 'attack'].join(' ')}
+      className={['cell', cell.color, selected && 'selected', cell.available && cell.figure && 'attack'].join(' ')}
     >
       {cell.available && !cell.figure && <div className="available" />}
       {cell.figure?.logo && <img src={cell.figure.logo} alt="" />}

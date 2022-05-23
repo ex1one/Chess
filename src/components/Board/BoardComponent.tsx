@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import CellComponent from '../Cell/CellComponent';
 import Board from '../../models/Board';
 import Cell from '../../models/Cell';
-import { Player } from '../../models/Player';
+import Player from '../../models/Player';
 
 interface IBoardComponentProps {
   board: Board;

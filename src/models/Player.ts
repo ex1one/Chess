@@ -1,9 +1,11 @@
 import Colors from './Colors';
 
-export class Player {
+class Player {
   color: Colors;
 
   constructor(color: Colors) {
     this.color = color;
   }
 }
+
+export default Player;

@@ -13,7 +13,6 @@ class King extends Figure {
 
   canMove(target: Cell): boolean {
     if (!super.canMove(target)) return false;
-
     return Math.abs(target.x - this.cell.x) <= 1 && Math.abs(target.y - this.cell.y) <= 1;
   }
 }

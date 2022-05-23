@@ -1,6 +1,6 @@
 import React, { FC, SetStateAction } from 'react';
 import Cell from '../../models/Cell';
-import { Player } from '../../models/Player';
+import Player from '../../models/Player';
 
 interface ICellComponentProps {
   cell: Cell;

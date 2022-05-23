@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BoardComponent from './components/Board/BoardComponent';
 import Board from './models/Board';
 import './styles/index.scss';
-import { Player } from './models/Player';
+import Player from './models/Player';
 import Colors from './models/Colors';
 import LostFigures from './components/LostFigures/LostFigures';
 import Timer from './components/Timer/Timer';

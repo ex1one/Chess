@@ -88,7 +88,6 @@ export default class Cell {
   }
 
   addLostFigure(lostFigure: Figure) {
-    console.log(lostFigure);
     if (lostFigure.color === Colors.BLACK) {
       this.board.lostBlackFigures.push(lostFigure);
     } else {
